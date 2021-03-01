@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My Gaming Console</title>
+        <meta name="description" content="Contributions from Rafeh Qazi, Thanks">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <style type="text/css">
+              body {
+                width: 100%;
+                height: 200px;
+                background-color: beige;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="outer" id="lcmhcf">
+            <div class="inner">
+                <div>
+                    <h3>Get your LCM and HCF</h3>
+                </div>
+                <div>
+                    <label for="num1">Number 1</label>
+                    <input type="number" autocomplete="off" id="num1" name="num1">
+                    <br>
+                    <label for="num2">Number 2</label>
+                    <input type="number" autocomplete="off" id="num2" name="num2">
+                </div>
+                <br>
+                <button class="btn btn-success" id='lcm'>Get LCM</button>
+                <button class="btn btn-success" id='hcf'>Get HCF</button>
+                <button class="btn btn-warning" id='resetlcmhcf'>Reset</button>
+                <div>
+                    <p id="result_lcm"></p>
+                    <p id="result_hcf"></p>
+                </div>
+            </div>
+        </div>
+        <div class="outer">
+            <div class="inner">
+                <h3>Get Your Age In Days</h3>
+            </div>
+            <div class="inner2">
+                <div>
+                    <label for="birthday">Enter Your Birthday: </label>
+                    <input type="date" name="birthday" id="birthday">
+                </div>
+                <button class="btn btn-success" id='days'>How many days old</button>
+                <div>
+                    <p id="result_days"></p>
+                </div>
+            </div>
+        </div>
+        <div class="outer" id="mydictionary">
+            <div class="inner">
+                <div>
+                    <h3>Get Your Dictionary</h3>
+                </div>
+                <div>
+                    <label for="word">Word</label>
+                    <input type="text" autocomplete="off" id="word" name="word">
+                </div>
+                <br>
+                <button class="btn btn-success" id='getmeaning'>Get Definition</button>
+                <div>
+                    <p id="meaning"></p>
+                </div>
+            </div>
+        </div>
+        <div class="outer">
+            <div class="inner">
+                <h3>Get Some Funny Cats</h3><br>
+                <button class="btn btn-success" type="submit" id="CatGenerator" onclick="generateCat()">
+                    Get My Cats
+                </button>
+            </div>
+            <div class="inner2" id="cats-go-here">
+            </div>
+        </div>
+        <div class="outer" id="rpsgame">
+            <div class="inner">
+            <h3>Game Time! Rock, Paper, Scissors</h3>
+        </div>
+            <div class="flex-box-rps inner2" id='flex-box-rps-div'>
+                <img src="static/images/rock.png" alt="" id="rock" height="120px" width="120px" onclick="rpsgame(this)">
+                <img src="static/images/paper.png" alt="" id="paper" height="120px" width="120px" onclick="rpsgame(this)">
+                <img src="static/images/scissors.png" alt="" id="scissors" height="120px" width="120px" onclick="rpsgame(this)">
+            </div>
+        </div>
+
+        <div class="outer">
+            <div class="inner">
+                <h3>Goofy Time! Play With Buttons</h3>
+            </div>
+            <div class="inner2">
+                <form action="">
+                    <select name="backdrop" id="background" onchange="buttonColourChange(this)">
+                        <option value="random">Random</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="reset">Reset</option>
+                    </select>
+                </form>
+                <button class="btn btn-primary">Facebook</button>
+                <button class="btn btn-success">Google</button>
+                <button class="btn btn-danger">Instagram</button>
+                <button class="btn btn-warning">Yahoo!</button>
+            </div>
+        </div>
+
+        <div class="outer">
+            <h3>Blackjack Time!</h3>
+            <h4> <span id='BlackJackResult'>Lets Play</span></h4>
+
+            <div class="flex-blackjack-row-1">
+                <div id="your-box">
+                    <h3>You : <span id='your-result'>0</span></h3>
+                </div>
+                <div id="dealer-box">
+                    <h3>Dealer : <span id='dealer-result'>0</span></h3>
+                </div>
+            </div>
+            <div class="flex-blackjack-row-2">
+                <div>
+                    <button class="btn-lg btn-primary mr-2" id='hit'>Hit</button>
+                    <button class="btn-lg btn-warning mr-2" id='stand'>Stand</button>
+                    <button class="btn-lg btn-danger" id='deal'>Deal</button>
+                </div>
+            </div>
+            <div class="flex-blackjack-row-3">
+                <div>
+                    <table>
+                        <tr>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                            <th>Draws</th>
+                        </tr>
+                        <tr>
+                            <td><span id='wins'>0</span></td>
+                            <td><span id='losses'>0</span></td>
+                            <td><span id='draws'>0</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="static/js/script.js" async defer></script>
+        <script src="static/js/dict.js"></script>
+    </body>
+</html>
